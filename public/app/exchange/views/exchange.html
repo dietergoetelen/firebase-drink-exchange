@@ -1,9 +1,13 @@
-<a ui-sref="drink-exchange.new" class="btn btn-primary">New</a>
+<div ng-controller="ExchangeCtrl as vm">
+    <a ui-sref="drink-exchange.new" class="btn btn-primary">New</a>
 
-<hr/>
+    <hr/>
 
-<div ui-view></div>
-
-
-Exchange page
-
+    <div ui-view></div>
+    
+    <div class="row">
+        <div ng-repeat="exchange in vm.scope.overview" class="col-md-4">
+            <exchange vote="vm.vote(exchange)" custom-class="hand" value="exchange"></exchange>
+        </div>
+    </div>
+</div>

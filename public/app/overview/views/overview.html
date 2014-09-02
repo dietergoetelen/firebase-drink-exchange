@@ -1,1 +1,8 @@
-overview
+<div ng-controller="OverviewCtrl as vm">
+    
+    <div class="row">
+        <div ng-repeat="exchange in vm.scope.overview" class="col-md-4">
+            <exchange value="exchange"></exchange>
+        </div>
+    </div>
+</div>

@@ -2,9 +2,21 @@
     'use strict';
     
     var OverviewCtrl = (function () {
-        function OverviewCtrl() {
+        function OverviewCtrl(scope, DataService) {
+            this.dataService = DataService;
+            this.scope = scope;
             
+            this.bindOverview();
         }
+        
+        OverviewCtrl.prototype.bindOverview = function () {
+            var vm = this;
+            
+            var syncObject = vm.dataService.get('').$asObject();
+            syncObject.$bindTo(vm.scope, 'overview');
+        };
+        
+        OverviewCtrl.$inject = ['$scope', 'DataService'];
         
         return OverviewCtrl;
     }());

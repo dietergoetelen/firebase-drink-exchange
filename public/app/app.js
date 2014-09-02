@@ -3,6 +3,7 @@
     'use strict';
     
     var app = angular.module('app', [
+        'app.common',
         'app.overview',
         'app.exchange',
         'ui.router'
