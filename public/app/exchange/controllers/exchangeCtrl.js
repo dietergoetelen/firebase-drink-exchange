@@ -28,7 +28,9 @@
         
         ExchangeCtrl.prototype.vote = function (exchange) {
             var updatedExchange = exchange,
-                vm = this;
+                vm = this,
+                rating = updatedExchange.rating,
+                total = 1;
             
             updatedExchange.amount = updatedExchange.amount + 1;
             updatedExchange.price = calculatePrice['+'](updatedExchange.price, updatedExchange.rating);
@@ -36,10 +38,18 @@
             // Update this price
             vm.dataService.set(exchange.name, updatedExchange);
             
-            // Update other prices
+            // Calculate total
             angular.forEach(vm.scope.overview, function (ex) {
                 if (ex && ex.name != exchange.name) {
-                    ex.price = calculatePrice['-'](ex.price, ex.rating);
+                    total += 1;
+                }
+            });
+            
+            // Update other prices
+            angular.forEach(vm.scope.overview, function (ex) {
+                
+                if (ex && ex.name != exchange.name) {
+                    ex.price = calculatePrice['-'](ex.price, rating / total);
                     
                     if (ex.price < 1) {
                         ex.price = 1;
@@ -47,6 +57,7 @@
                     
                     vm.dataService.set(ex.name, ex);
                 }
+                
             });
         };
 
