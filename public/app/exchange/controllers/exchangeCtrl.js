@@ -5,10 +5,10 @@
         
         var calculatePrice = {
             '+': function (price, rating) {
-                return +(price + (rating / 100)).toFixed(2);
+                return +(price + (rating / 100));
             },
             '-': function (price, rating) {
-                return +(price - (rating / 100)).toFixed(2);
+                return +(price - (rating / 100));
             }
         };
         
@@ -30,7 +30,7 @@
             var updatedExchange = exchange,
                 vm = this,
                 rating = updatedExchange.rating,
-                total = 1;
+                total = 0;
             
             updatedExchange.amount = updatedExchange.amount + 1;
             updatedExchange.price = calculatePrice['+'](updatedExchange.price, updatedExchange.rating);

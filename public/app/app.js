@@ -6,6 +6,7 @@
         'app.common',
         'app.overview',
         'app.exchange',
+        'ngAnimate',
         'ui.router'
     ]);
     

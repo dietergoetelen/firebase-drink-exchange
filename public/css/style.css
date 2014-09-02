@@ -1,3 +1,38 @@
 .hand {
     cursor: pointer;
+    -webkit-user-select: none; /* Chrome/Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+ */
+
+    /* Rules below not implemented in browsers yet */
+    -o-user-select: none;
+    user-select: none;   
 }
+
+.main[ui-view].ng-enter,
+.main[ui-view].ng-leave {
+  position: absolute;
+  left: 15px;
+  right: 15px;
+  -webkit-transition: all .4s;
+    -moz-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+}
+
+.main[ui-view].ng-enter {
+  opacity: 1;
+}
+
+.main[ui-view].ng-enter-active {
+  opacity: 1;
+}
+
+.main[ui-view].ng-leave {
+  opacity: 0;
+}
+
+.main[ui-view].ng-leave-active {
+  opacity: 0;
+}
+
