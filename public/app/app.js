@@ -3,13 +3,14 @@
     'use strict';
     
     var app = angular.module('app', [
+        'app.overview',
         'app.exchange',
         'ui.router'
     ]);
     
     app.config(['$stateProvider', '$urlRouterProvider',
                 function ($stateProvider, $urlRouterProvider) {
-                    $urlRouterProvider.otherwise('/drink-exchange');
+                    $urlRouterProvider.otherwise('/overview');
                 }
            ]);
     

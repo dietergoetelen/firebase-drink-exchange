@@ -3,7 +3,7 @@
     
     
     var app = angular.module('app.exchange', [
-        'ui-router',
+        'ui.router',
         'firebase'
     ]);
     
@@ -11,7 +11,11 @@
         $stateProvider
             .state('drink-exchange', {
                 url: '/drink-exchange',
-                templateUrl: 'app/exchange/views/overview.html'
+                templateUrl: 'app/exchange/views/exchange.html'
+            })
+            .state('drink-exchange.new', {
+                url: '/new',
+                templateUrl: 'app/exchange/views/exchange.new.html'
             });
     }]);
     
