@@ -33,6 +33,7 @@
         <ul class="nav nav-pills">
             <li><a ui-sref="overview">Overview</a></li>
             <li><a ui-sref="drink-exchange">Exchange</a></li>
+            <li class="pull-right"><a href="https://github.com/dietergoetelen/firebase-drink-exchange">Github</a></li>
         </ul>
         
         <hr/>
@@ -44,28 +45,10 @@
     </div>
       
     <!-- libs -->
-    <script src="libs/angular.min.js"></script>
-    <script src="libs/angular-animate.min.js"></script>
-    <script src="libs/ui-router.min.js"></script>
-    <script src="libs/firebase.js"></script>
-    <script src="libs/angularfire.js"></script>
+    <script src="src/libs.min.js"></script>
 
     <!-- app -->
-    <script src="app/app.js"></script>
-    
-      <!-- common -->
-      <script src="app/common/common.js"></script>
-      <script src="app/common/services/dataService.js"></script>
-      
-      <!-- overview -->
-      <script src="app/overview/overview.js"></script>
-      <script src="app/overview/controllers/overviewCtrl.js"></script>
-      
-      <!-- exchange -->
-      <script src="app/exchange/exchange.js"></script>
-      <script src="app/exchange/directives/exchangeDirective.js"></script>
-      <script src="app/exchange/controllers/exchangeCtrl.js"></script>
-      <script src="app/exchange/controllers/newExchangeCtrl.js"></script>
+    <script src="src/app.min.js"></script>
     
   </body>
 </html>

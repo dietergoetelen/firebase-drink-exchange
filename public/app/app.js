@@ -15,6 +15,6 @@
                     $urlRouterProvider.otherwise('/overview');
                 }
            ]);
-    
+
     app.constant('FBURL', 'https://drink-exchange.firebaseio.com/');
 }());
