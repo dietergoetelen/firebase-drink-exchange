@@ -21,7 +21,7 @@
         
         ExchangeCtrl.prototype.bindExchange = function () {
             var vm = this;
-            var syncObject = vm.dataService.get('').$asObject();
+            var syncObject = vm.dataService.get(this.dataService.user.uid).$asObject();
             
             syncObject.$bindTo(vm.scope, 'overview');
         };
