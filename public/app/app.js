@@ -24,7 +24,10 @@
             $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams) {
                 if (toState.data && toState.data.login && toState.data.login === true) {
                     if (!dataService.user) {
+                        // Cancel the state transition
                         event.preventDefault();
+                        
+                        // Go to the login state
                         $state.go('login');
                     }
                 }
