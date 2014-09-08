@@ -10,7 +10,7 @@ gulp.task('js', function () {
     // Minfiy app files
     gulp.src(jsFolder)
         .pipe(ngmin({dynamic:true}))
-        .pipe(uglify())
+        //.pipe(uglify())
         .pipe(concat('app.min.js'))
         .pipe(gulp.dest('./public/src'));
 });

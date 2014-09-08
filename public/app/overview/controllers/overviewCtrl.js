@@ -12,7 +12,7 @@
         OverviewCtrl.prototype.bindOverview = function () {
             var vm = this;
             
-            var syncObject = vm.dataService.get('').$asObject();
+            var syncObject = vm.dataService.get(vm.dataService.user.uid).$asObject();
             syncObject.$bindTo(vm.scope, 'overview');
         };
         

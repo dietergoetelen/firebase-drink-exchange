@@ -15,7 +15,7 @@
                 exchange.amount = 0;
                 
                 // Todo: save to database
-                this.dataService.set(exchange.name, exchange);        
+                this.dataService.set(this.dataService.user.uid + '/' + exchange.name, exchange);        
                 
                 this.$state.go('drink-exchange');
             } else {

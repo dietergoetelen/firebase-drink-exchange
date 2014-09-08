@@ -10,8 +10,13 @@
         $stateProvider
             .state('overview', {
                 url: '/overview',
+                data: {
+                    login: true
+                },
                 templateUrl: 'app/overview/views/overview.html'
             });
     }]);
+    
+    
     
 }());
